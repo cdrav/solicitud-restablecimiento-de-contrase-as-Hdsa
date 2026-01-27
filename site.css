@@ -1,0 +1,84 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Encabezado Institucional del Formulario */
+.form-header-custom {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1rem;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+    border-bottom: 4px solid #069681; /* Acento institucional */
+}
+
+.form-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(78, 147, 204, 0.08);
+    max-width: 850px;
+    margin: 0.5rem auto;
+    background: #fff;
+}
+
+/* Estilo solicitado para los chips de selección */
+.selection-chip {
+    border: 1px solid rgba(0,0,0,.15);
+    background: #fff;
+    color: #0f3332;
+    padding: 4px 12px; /* Ajustado ligeramente para mejor visualización */
+    border-radius: 999px;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    cursor: pointer;
+    
+    /* Propiedades adicionales para layout */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    user-select: none;
+}
+
+.selection-chip:hover {
+    background-color: #e9f4f2;
+    border-color: #0f3332;
+}
+
+/* Estado seleccionado (Active) */
+.btn-check:checked + .selection-chip {
+    background-color: #0f3332;
+    color: #fff;
+    border-color: #0f3332;
+    box-shadow: 0 2px 5px rgba(15, 51, 50, 0.2);
+}
+
+.section-title {
+    color: #164443;
+    font-weight: 700;
+    font-size: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.btn-submit-custom {
+    background-color: #069681;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-submit-custom:hover {
+    background-color: #047a67;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 150, 129, 0.2);
+    color: white;
+}
