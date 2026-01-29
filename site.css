@@ -9,7 +9,7 @@ body {
     color: #000000;
     padding: 1rem;
     border-radius: 12px 12px 0 0;
-    position: relative;
+    position: center;
     border-bottom: 4px solid #069681; /* Acento institucional */
 }
 
