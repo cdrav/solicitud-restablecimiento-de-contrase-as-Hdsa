@@ -120,6 +120,11 @@
                         <label class="selection-chip" for="checkEmail">
                             <i class="bi bi-envelope-at"></i> Correo Institucional
                         </label>
+
+                        <input type="checkbox" class="btn-check" id="checkBiometrico" name="sistema" value="Biometrico" autocomplete="off">
+                        <label class="selection-chip" for="checkBiometrico">
+                            <i class="bi bi-fingerprint"></i> Registro Biométrico
+                        </label>
                     </div>
 
                     <div id="emailPolicyAlert" class="alert alert-warning py-2 small mb-3" style="display: none;">
@@ -140,6 +145,7 @@
                                 <option value="Olvido">Olvido de contraseña</option>
                                 <option value="Caducidad">Caducidad / Expiración</option>
                                 <option value="Bloqueo">Usuario bloqueado</option>
+                                <option value="Registro de Biometría">Registro de Biometría</option>
                             </select>
                         </div>
                         <div class="col-12">
@@ -203,6 +209,12 @@
                                 <div class="mt-1 small text-danger">
                                     <strong>Importante:</strong> Solo se gestionan cuentas institucionales (@hdsa.gov.co). <u>No se restablecen contraseñas de correos personales</u>.
                                 </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Caso Especial: Registro Biométrico</div>
+                                Si es un funcionario nuevo o requiere su primer registro en el sistema de huella, seleccione el sistema <strong>Registro Biométrico</strong> y el motivo <strong>Registro de Biometría</strong>. El área de Sistemas se pondrá en contacto para coordinar la captura.
                             </div>
                         </li>
                         <li class="list-group-item">

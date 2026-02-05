@@ -1,3 +1,6 @@
+// Configuración
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzYQKIythruQYZe1WMEShZ29Mk-1qUfrdwCXarl1uZ85ZC8s0P8dgrVsxo0HzXf3uYaiQ/exec';
+
 // Mostrar advertencia de política de correos al seleccionar la opción
 document.getElementById('checkEmail').addEventListener('change', function() {
     const alertBox = document.getElementById('emailPolicyAlert');
@@ -36,10 +39,7 @@ document.getElementById('passwordRequestForm').addEventListener('submit', functi
     }
     data.append('sistemas', sistemasSeleccionados.join(', '));
 
-    
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzYQKIythruQYZe1WMEShZ29Mk-1qUfrdwCXarl1uZ85ZC8s0P8dgrVsxo0HzXf3uYaiQ/exec';
-
-    fetch(scriptURL, {
+    fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         body: data
     })
