@@ -46,7 +46,7 @@ document.getElementById('passwordRequestForm').addEventListener('submit', functi
     .then(response => response.json())
     .then(response => {
         if (response.result === 'success') {
-            showStatusModal('¡Solicitud Exitosa!', 'La solicitud ha sido radicada correctamente. El documento PDF ha sido generado y archivado en el área de Sistemas.', true);
+            showStatusModal('¡Solicitud Exitosa!', 'La solicitud ha sido radicada correctamente, recibido por el área de Sistemas.', true);
             document.getElementById('passwordRequestForm').reset();
             document.getElementById('emailPolicyAlert').style.display = 'none';
         } else {
