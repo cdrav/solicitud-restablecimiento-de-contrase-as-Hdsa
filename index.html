@@ -99,6 +99,11 @@
                                 <option value="Facturación">Facturación</option>
                             </select>
                         </div>
+                        <div class="col-12">
+                            <label for="emailContacto" class="form-label fw-semibold small text-muted">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="emailContacto" name="emailContacto" required placeholder="ejemplo@correo.com">
+                            <div class="form-text text-primary"><i class="bi bi-info-circle-fill me-1"></i>Nota: Por este medio se le notificará el nuevo usuario y contraseña.</div>
+                        </div>
                     </div>
 
                     <!-- Sección 2: Alcance de la Solicitud (Estilo Chip) -->
@@ -233,6 +238,22 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Estado (Éxito / Error) -->
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow" style="border-radius: 1rem;">
+                <div class="modal-body text-center p-4">
+                    <div class="mb-3">
+                        <i id="statusIcon" class="bi" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <h4 id="statusTitle" class="fw-bold mb-2"></h4>
+                    <p id="statusMessage" class="text-muted mb-4"></p>
+                    <button type="button" class="btn px-4 rounded-pill fw-semibold" data-bs-dismiss="modal" id="statusBtn">Aceptar</button>
                 </div>
             </div>
         </div>
