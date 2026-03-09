@@ -23,21 +23,17 @@ document.getElementById('passwordRequestForm').addEventListener('submit', functi
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Procesando...';
 
-    // Recopilar datos para enviar
+    // Recopilar datos del formulario de una forma más moderna
     const formData = new FormData(this);
-    const data = new URLSearchParams();
     
-    // Unir los sistemas seleccionados en un solo string
-    let sistemasSeleccionados = [];
-    checkboxes.forEach((cb) => sistemasSeleccionados.push(cb.value));
-    
-    // Llenar el objeto data evitando duplicar la clave 'sistema'
-    for (const pair of formData.entries()) {
-        if (pair[0] !== 'sistema') {
-            data.append(pair[0], pair[1]);
-        }
-    }
-    data.append('sistemas', sistemasSeleccionados.join(', '));
+    // Obtener todos los valores de los checkboxes 'sistema' seleccionados
+    const sistemasSeleccionados = formData.getAll('sistema');
+    // Eliminar las entradas individuales de 'sistema' del FormData
+    formData.delete('sistema');
+    // Añadir una única entrada 'sistemas' con los valores unidos por comas, como espera el Apps Script
+    formData.append('sistemas', sistemasSeleccionados.join(', '));
+
+    const data = new URLSearchParams(formData);
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -50,12 +46,12 @@ document.getElementById('passwordRequestForm').addEventListener('submit', functi
             document.getElementById('passwordRequestForm').reset();
             document.getElementById('emailPolicyAlert').style.display = 'none';
         } else {
-            throw new Error(response.error);
+            throw new Error(response.error || 'El script devolvió un error no especificado.');
         }
     })
     .catch(error => {
         console.error('Error!', error.message);
-        showStatusModal('Error', 'Hubo un error al enviar la solicitud. Por favor intente nuevamente.', false);
+        showStatusModal('Error', 'No se pudo completar la solicitud. Detalles: ' + error.message, false);
     })
     .finally(() => {
         submitBtn.disabled = false;
